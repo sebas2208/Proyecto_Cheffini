@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:c="http://xmlns.jcp.org/jsf/core"
+	xmlns:e="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Datos_usuario</title>
+<link rel="stylesheet" href="main.css"></link>
+</head>
+<style>
+.body {
+	background-image: url(Admi.jpg);
+	background-size: auto 110vh;
+}
+
+.button {
+	margin-top: 30px;
+	display: inline-block;
+	cursor: pointer;
+	height: 40px;
+	width: 150px;
+	outline: 0;
+	border: 0;
+	border-radius: 0;
+	background: white;
+	color: black;
+	color: black;
+	font-family: Verdana, Helvetica;
+	font-weight: bold;
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	border-radius: 12px;
+	position: relative;
+	transition: all 0.25s ease;
+}
+
+#texto {
+	display: flex;
+	justify-content: center;
+	margin-top: 200px;
+}
+
+#seleccion {
+	display: flex;
+	justify-content: center;
+	margin-top: 80px;
+}
+
+#atras {
+	display: flex;
+	justify-content: center;
+}
+
+#cliente {
+	margin-right: 10px;
+}
+
+#chef {
+	margin-left: 10px;
+}
+</style>
+<h:body class="body">
+	<h:form>
+		<div id="texto">
+			<h2>Seleccione si es cliente o chef</h2>
+		</div>
+		<div id="seleccion">
+			<div id="cliente">
+				<h:button class="button" type="Submit" id="cliente" value="CLIENTE"
+					outcome="Registro"></h:button>
+			</div>
+			<div id="chef">
+				<h:button class="button" type="Submit" id="chef" value="CHEF"
+					outcome="REGISTRO_Chef"></h:button>
+			</div>
+		</div>
+		<div id="atras">
+			<h:button class="button" type="Submit" id="atras" value="ATRAS"
+				outcome="inicio"></h:button>
+		</div>
+	</h:form>
+</h:body>
+</html>

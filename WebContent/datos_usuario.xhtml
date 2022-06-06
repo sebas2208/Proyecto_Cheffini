@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:c="http://xmlns.jcp.org/jsf/core"
+	xmlns:e="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Reservas existentes</title>
+<link rel="stylesheet" href="main.css"></link>
+</head>
+<style>
+.body {
+	background-image: url(DATOS.jpg);
+	background-size: auto 110vh;
+}
+
+.button {
+	margin-top: 30px;
+	display: inline-block;
+	cursor: pointer;
+	height: 40px;
+	width: 150px;
+	outline: 0;
+	border: 0;
+	border-radius: 0;
+	background: white;
+	color: black;
+	color: black;
+	font-family: Verdana, Helvetica;
+	font-weight: bold;
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	border-radius: 12px;
+	position: relative;
+	transition: all 0.25s ease;
+}
+
+.boton {
+	margin-top: 30px;
+	display: inline-block;
+	cursor: pointer;
+	height: 45px;
+	width: 230px;
+	outline: 0;
+	border: 0;
+	border-radius: 0;
+	background: white;
+	color: black;
+	color: black;
+	font-family: Verdana, Helvetica;
+	font-weight: bold;
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	border-radius: 12px;
+	position: relative;
+	transition: all 0.25s ease;
+}
+
+#botones {
+	float: right;
+	display: flex;
+	margin-right: 40px;
+	margin-top: -260px;
+}
+
+#des_pdf {
+	display: flex;
+	justify-content: center;
+	margin-top: 260px;
+	margin-left: 1050px;
+}
+
+#des_excel {
+	display: flex;
+	justify-content: center;
+	margin-top: 5px;
+	margin-left: 1050px;
+}
+
+#cheffini {
+	margin-right: 10px;
+}
+
+#res {
+	margin-right: 10px;
+}
+
+#salir {
+	margin-right: 10px;
+}
+
+#tabla {
+	display: flex;
+	justify-content: center;
+	margin-top: -240px;
+	margin-left: -250px;
+}
+</style>
+<h:body class="body">
+	<h:form>
+		<div id="botones">
+			<div id="cheffini">
+				<h:button class="button" type="Submit" id="cheff" value="CHEFFINI"
+					outcome="Menu_Usuario"></h:button>
+			</div>
+			<div id="res">
+				<h:button class="button" type="Submit" id="reserva" value="ME"
+					outcome="Me"></h:button>
+			</div>
+			<div id="salir">
+				<h:button class="button" type="button" value="SALIR"
+					outcome="inicio"></h:button>
+			</div>
+		</div>
+		<div id="des_pdf">
+			<h:commandButton class="boton" type="Submit" id="pdf" value="PDF"></h:commandButton>
+		</div>
+		<div id="des_excel">
+			<h:commandButton class="boton" type="Submit" id="excel" value="EXCEL"></h:commandButton>
+		</div>
+		<div id="tabla">
+			<Table border="1">
+				<tr>
+					<th class="RE">ID reserva</th>
+					<th class="RE">ID usuario</th>
+					<th class="RE">ID chef</th>
+					<th class="RE">Fecha</th>
+					<th class="RE">Metodo de pago</th>
+				</tr>
+
+				<ui:repeat var="re" value="#{Reservas.mostrarReservas()}">
+					<tr>
+						<td class="dat"><h:outputText value="#{re.id_reserva}" /></td>
+						<td class="dat"><h:outputText value="#{re.id_chef}" /></td>
+						<td class="dat"><h:outputText value="#{re.id_usuario}" /></td>
+						<td class="dat"><h:outputText value="#{re.metododepago}" /></td>
+						<td class="dat"><h:outputText value="#{re.fecha}" /></td>
+
+					</tr>
+				</ui:repeat>
+
+			</Table>
+		</div>
+	</h:form>
+</h:body>
+</html>

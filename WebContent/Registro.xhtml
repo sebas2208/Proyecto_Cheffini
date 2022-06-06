@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:c="http://xmlns.jcp.org/jsf/core"
+	xmlns:e="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Inicio</title>
+<link rel="stylesheet" href="main.css"></link>
+</head>
+<style>
+.body {
+	background-image: url(Usuario_Registro.jpg);
+	background-size: cover;
+}
+
+.input {
+	word-wrap: break-word;
+	height: 30px;
+	width: 300px;
+	outline: 0;
+	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #7b7b7b;
+	color: #999;
+	font-family: 'Quicksand', sans-serif;
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	border-radius: 12px;
+}
+
+.con {
+	height: 30px;
+	width: 300px;
+	outline: 0;
+	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #7b7b7b;
+	color: #999;
+	font-family: 'Quicksand', sans-serif;
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	border-radius: 12px;
+	position: relative;
+}
+
+.prof {
+	width: 30px;
+	height: 30px;
+	margin: 5px;
+	padding: 10px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+	font-size: 11px;
+	line-height: 32px;
+	text-transform: uppercase;
+	float: left;
+}
+
+.button {
+	margin-top: 30px;
+	display: inline-block;
+	cursor: pointer;
+	height: 25px;
+	width: 100px;
+	outline: 0;
+	border: 0;
+	border-radius: 0;
+	background: white;
+	color: black;
+	color: black;
+	font-family: Verdana, Helvetica;
+	font-weight: bold;
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	border-radius: 12px;
+	position: relative;
+	transition: all 0.25s ease;
+}
+
+#menu-superior {
+	display: flex;
+	justify-content: center;
+	margin-top: 120px;
+}
+
+#menu1 {
+	display: flex;
+	justify-content: center;
+	margin-top: 35px;
+}
+
+#menu2 {
+	display: flex;
+	justify-content: center;
+	margin-top: 40px;
+}
+
+#menu3 {
+	display: flex;
+	justify-content: center;
+	margin-top: 35px;
+}
+
+#menu4 {
+	display: flex;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+#profesion {
+	display: flex;
+	margin-top: -30px;
+	margin-left: 80px;
+}
+
+#botones {
+	display: flex;
+	justify-content: center;
+}
+
+#atras {
+	display: flex;
+	margin-right: 20px;
+}
+
+#registro {
+	display: flex;
+}
+</style>
+<h:body class="body">
+	<c:view>
+	<!-- Se llama la ID de la clase Usuario, tambien con el ID llamamos
+		los atributos que se crearon en la clase para lograr lla conección -->
+		<h:form action="#{Usuario.crearUsuario}">
+			<div id="menu-superior">
+				<h:inputText class="input" type="text" value="#{Usuario.nombre}"
+					align="center" name="username" id="username"></h:inputText>
+			</div>
+			<div id="menu1">
+				<h:inputText class="con" type="password"
+					value="#{Usuario.contraseña}" name="contrasena" id="contrasena"></h:inputText>
+			</div>
+			<div id="menu2">
+				<h:inputText class="con" type="password"
+					value="#{Usuario.confirmar}" name="confirmar_contrasena"
+					id="confirmar_contrasena"></h:inputText>
+			</div>
+			<div id="menu3">
+				<h:inputText class="con" type="text" name="direccion"
+					value="#{Usuario.direccion}" id="direccion"></h:inputText>
+			</div>
+			<div id="menu4">
+				<h:inputText class="con" type="text" value="#{Usuario.tarjeta}"
+					name="credito" id="credito"></h:inputText>
+			</div>
+			<div id="botones">
+				<div id="atras">
+					<h:button class="button" type="button" value="ATRAS"
+						outcome="Cliente-Chef"></h:button>
+				</div>
+				<div id="registro">
+					<h:commandButton class="button" type="submit"
+						action="#{Usuario.crearUsuario}" value="REGISTRAR"></h:commandButton>
+				</div>
+			</div>
+
+		</h:form>
+	</c:view>
+</h:body>
+</html>

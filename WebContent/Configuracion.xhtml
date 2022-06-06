@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:c="http://xmlns.jcp.org/jsf/core"
+	xmlns:e="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Modificar</title>
+<link rel="stylesheet" href="main.css"></link>
+</head>
+<style>
+.body {
+	background-image: url(Admi.jpg);
+	background-size: cover;
+}
+
+.button {
+	margin-top: 30px;
+	display: inline-block;
+	cursor: pointer;
+	height: 25px;
+	width: 100px;
+	outline: 0;
+	border: 0;
+	border-radius: 0;
+	background: white;
+	color: black;
+	color: black;
+	font-family: Verdana, Helvetica;
+	font-weight: bold;
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	border-radius: 12px;
+	position: relative;
+	transition: all 0.25s ease;
+}
+
+.input {
+	height: 20px;
+	width: 400px;
+	outline: 0;
+	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #7b7b7b;
+	color: #999;
+	font-family: 'Quicksand', sans-serif;
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	border-radius: 12px;
+	position: relative;
+}
+
+#datos {
+	display: flex;
+	justify-content: center;
+	margin-top: 30px;
+}
+
+#marco {
+	background: #f0f0f0;
+	margin: auto;
+	margin-top: 70px;
+	width: 500px;
+	height: 500px;
+}
+
+#foto {
+	background-image: url(Foto_Usuario.png);
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	margin: auto;
+	width: 120px;
+	height: 120px;
+}
+
+#botones {
+	display: flex;
+	justify-content: center;
+}
+
+#volver {
+	margin-right: 10px;
+}
+
+#modificar {
+	margin-left: 10px;
+}
+</style>
+<h:body class="body">
+	<h:form>
+		<div id="marco">
+			<div id="foto"></div>
+			<div id="datos">
+				<h:inputText class="input" type="text" id="nombre"
+					value="#{Usuario.nombre}"></h:inputText>
+			</div>
+			<div id="datos">
+				<h:inputText class="input" type="text" id="contraseña"
+					value="Nueva Contraseña"></h:inputText>
+			</div>
+			<div id="datos">
+				<h:inputText class="input" type="text" id="nuevaC"
+					value="Confirme Nueva Contraseña"></h:inputText>
+			</div>
+			<div id="datos">
+				<h:inputText class="input" type="text" id="direccion"
+					value="Nueva Dirección"></h:inputText>
+			</div>
+			<div id="datos">
+				<h:inputText class="input" type="text" id="tarjeta"
+					value="Nueva Tatjeta de Crédito"></h:inputText>
+			</div>
+			<div id="botones">
+				<div id="volver">
+					<h:button class="button" type="button" value="VOLVER" outcome="Me"></h:button>
+				</div>
+				<div id="modificar">
+					<h:commandButton class="button" type="submit" value="GUARDAR"></h:commandButton>
+				</div>
+			</div>
+		</div>
+	</h:form>
+</h:body>
+</html>

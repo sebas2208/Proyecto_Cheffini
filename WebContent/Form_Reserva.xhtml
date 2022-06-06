@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:c="http://xmlns.jcp.org/jsf/core"
+	xmlns:e="http://java.sun.com/jsp/jstl/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<head>
+<meta charset="UTF-8"></meta>
+<title>Reserva</title>
+<link rel="stylesheet" href="main.css"></link>
+</head>
+<style>
+.body {
+	background-image: url(Reserva.jpg);
+	background-size: cover;
+}
+.menu_superior {
+	display: flex;
+	justify-content: center;
+	margin-top: 200px;
+}
+.menu {
+	display: flex;
+	justify-content: center;
+	margin-top: 40px;
+}
+
+.input {
+	height: 30px;
+	width: 500px;
+	outline: 0;
+	border: 0;
+	border-radius: 0;
+	background: #f0f0f0;
+	color: #7b7b7b;
+	color: #999;
+	font-family: 'Quicksand', sans-serif;
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	border-radius: 12px;
+}
+
+.button {
+	margin-top: 30px;
+	display: inline-block;
+	cursor: pointer;
+	height: 25px;
+	width: 100px;
+	outline: 0;
+	border: 0;
+	border-radius: 0;
+	background: white;
+	color: black;
+	color: black;
+	font-family: Verdana, Helvetica;
+	font-weight: bold;
+	border: 2px solid rgba(0, 0, 0, 0.2);
+	border-radius: 12px;
+	position: relative;
+	transition: all 0.25s ease;
+}
+
+#id_chef {
+	width: 250px;
+	margin-top: 500px;
+}
+
+#id_usuario {
+	width: 250px;
+	margin-top: 35px;
+}
+
+#metododepago {
+	width: 250px;
+	margin-top: 35px;
+}
+
+#fecha {
+	width: 250px;
+	margin-top: 40px;
+}
+
+#botones {
+	display: flex;
+	justify-content: center;
+}
+
+#atras {
+	display: flex;
+	margin-right: 20px;
+}
+
+#registro {
+	display: flex;
+}
+</style>
+<h:body class="body">
+	<c:view>
+		<h:form action="#{Reservas.crearReserva}">
+			<div class="menu_superior">
+				<h:inputText class="input" type="text" value="#{Reservas.id_chef}"
+					name="id_chef" id="id_chef"></h:inputText>
+			</div>
+			<div class="menu">
+				<h:inputText class="input" type="text"
+					value="#{Reservas.id_usuario}" name="id_usuario" id="id_usuario"></h:inputText>
+			</div>
+			<div class="menu">
+				<h:inputText class="input" type="text"
+					value="#{Reservas.metododepago}" name="metododepago"
+					id="metododepago"></h:inputText>
+			</div>
+			<div class="menu">
+				<h:inputText class="input" type="text" value="#{Reservas.fecha}"
+					name="fecha" id="fecha"></h:inputText>
+			</div>
+			<div id="botones">
+				<div id="atras">
+					<h:button class="button" type="button" value="ATRAS"
+						outcome="Menu_Usuario"></h:button>
+				</div>
+				<div id="reserva">
+					<h:commandButton class="button" action="#{Reservas.crearReserva}"
+						value="RESERVAR"></h:commandButton>
+				</div>
+			</div>
+		</h:form>
+	</c:view>
+</h:body>
+</html>
